@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: task-manager-api-staging
+  namespace: argocd            # Argo CD Applications live in the argocd namespace
+spec:
+  project: default
+
+  # WHERE the desired state is: your config repo on GitHub
+  source:
+    repoURL: https://github.com/pshelar498-dotcom/task-manager-config.git
+    targetRevision: main       # the branch to follow
+    path: staging              # the folder with kustomization.yaml
+
+  # WHERE to deploy it: this same cluster, namespace "staging"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+
+  # HOW to sync: automatically
+  syncPolicy:
+    automated:
+      prune: true              # delete resources that were removed from Git
+      selfHeal: true           # undo manual changes made in the cluster
