@@ -12,4 +12,4 @@ resources:
 # WHICH version of the API runs in staging (CI will change this line in Step 8)
 images:
   - name: ghcr.io/pshelar498-dotcom/task-manager-api
-    newTag: sha-376bf49
+    newTag: sha-cc5f0ce
