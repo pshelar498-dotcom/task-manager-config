@@ -8,8 +8,11 @@ resources:
   - namespace.yaml
   - mongodb.yaml
   - api.yaml
+  - ui.yaml
 
-# WHICH version of the API runs in staging (CI will change this line in Step 8)
+# WHICH version of each app runs in staging (CI updates these lines)
 images:
   - name: ghcr.io/pshelar498-dotcom/task-manager-api
     newTag: sha-cc5f0ce
+  - name: ghcr.io/pshelar498-dotcom/task-manager-ui
+    newTag: sha-3d018df
