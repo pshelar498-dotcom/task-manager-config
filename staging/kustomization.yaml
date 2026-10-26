@@ -13,6 +13,6 @@ resources:
 # WHICH version of each app runs in staging (CI updates these lines)
 images:
   - name: ghcr.io/pshelar498-dotcom/task-manager-api
-    newTag: sha-cc5f0ce
+    newTag: sha-2ceaf26
   - name: ghcr.io/pshelar498-dotcom/task-manager-ui
     newTag: sha-3d018df
